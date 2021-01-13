@@ -1,0 +1,37 @@
+########################################
+Shell commands for Users Assignment
+########################################
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py shell
+
+########################################
+within shell
+########################################
+>>> from users_app.models import Users
+
+>>> User.objects.create()
+
+>>> User.objects.create(first_name = "John", last_name = "Albert", email_address="ja@gmail.com", age=27)
+
+>>> User.objects.create(first_name = "Vesper", last_name = "Albert", email_address="va@gmail.com", age=1)
+
+>>> User.objects.all()
+
+>>> User.objects.all().last()
+
+>>> User.objects.all().first()
+
+>>> c = User.objects.get(id=3)
+>>> c.last_name = "Pancakes"
+>>> c.save()
+
+>>> c = User.objects.get(id=2)
+>>> c.delete()
+
+>>> User.objects.all().order_by("first_name")
+
+>>> User.objects.all().order_by("first_name").reverse()
